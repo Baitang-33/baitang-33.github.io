@@ -31,13 +31,14 @@ jobs:
           path = Path("site/index.html")
           html = path.read_text(encoding="utf-8")
           css = """
-          .artboard{container-type:inline-size}
-          .artboard .hotspot.pill{background:transparent}
-          .artboard .hotspot.pill::before{content:"";position:absolute;z-index:0;top:1px;right:1px;bottom:1px;left:1px;width:auto;height:auto;aspect-ratio:auto;border-radius:inherit;background:#807974;pointer-events:none;transform:scaleY(0);transform-origin:bottom;transition:transform .46s cubic-bezier(.22,1,.36,1)}
-          .artboard .hotspot.pill::after{font-size:1.3cqw;white-space:nowrap;transform:none;transition:opacity .18s ease;transition-delay:.08s}
-          .artboard .hotspot.pill:hover::before,.artboard .hotspot.pill:focus-visible::before,.artboard .hotspot.pill:active::before{transform:scaleY(1)}
-          .artboard .hotspot.pill:hover::after,.artboard .hotspot.pill:focus-visible::after,.artboard .hotspot.pill:active::after{opacity:1}
-          """
+.artboard{container-type:inline-size}
+.artboard .hotspot.pill{background:transparent}
+.artboard .hotspot.pill:focus-visible{outline:none}
+.artboard .hotspot.pill::before{content:"";position:absolute;z-index:0;top:1px;right:1px;bottom:1px;left:1px;width:auto;height:auto;aspect-ratio:auto;border-radius:inherit;background:#807974;pointer-events:none;transform:scaleY(0);transform-origin:bottom;transition:transform .46s cubic-bezier(.22,1,.36,1)}
+.artboard .hotspot.pill::after{font-size:1.3cqw;white-space:nowrap;transform:none;transition:opacity .18s ease;transition-delay:.08s}
+.artboard .hotspot.pill:hover::before,.artboard .hotspot.pill:focus-visible::before,.artboard .hotspot.pill:active::before{transform:scaleY(1)}
+.artboard .hotspot.pill:hover::after,.artboard .hotspot.pill:focus-visible::after,.artboard .hotspot.pill:active::after{opacity:1}
+"""
           html = html.replace("</style>", css + "\n</style>", 1)
           path.write_text(html, encoding="utf-8")
           PY
