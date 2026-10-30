@@ -32,14 +32,13 @@ jobs:
           html = path.read_text(encoding="utf-8")
           css = """
           .nav-about,.nav-ill,.nav-pack,.nav-ip,.nav-contact{top:4.68%;height:4.16%}
-          .artboard .hotspot.pill{isolation:isolate;overflow:hidden;background:#fbfaf6;border:1px solid #c7c0bb;border-radius:999px;color:#9c928d}
-          .artboard .hotspot.pill:hover{background:#fbfaf6}
+          .artboard .hotspot.pill{isolation:isolate;overflow:hidden;background:transparent;border:0;border-radius:999px;color:transparent}
+          .artboard .hotspot.pill:hover{background:transparent}
           .artboard .hotspot.pill:focus-visible{outline:none}
-          .artboard .hotspot.pill::before{content:"";position:absolute;z-index:0;inset:0;border-radius:inherit;background:#807974;pointer-events:none;transform:scaleY(0);transform-origin:bottom;transition:transform .46s cubic-bezier(.22,1,.36,1)}
-          .artboard .hotspot.pill::after{content:attr(data-label);position:absolute;z-index:1;inset:0;display:grid;place-items:center;color:#9c928d;font-family:inherit;font-size:1.3cqw;font-weight:500;letter-spacing:.015em;line-height:1;text-transform:uppercase;white-space:nowrap;opacity:1;pointer-events:none;transition:color .18s ease;transition-delay:.08s;transform:none}
-          .artboard .hotspot.pill:hover,.artboard .hotspot.pill:focus-visible,.artboard .hotspot.pill:active{border-color:#807974}
+          .artboard .hotspot.pill::before{content:"";position:absolute;z-index:0;inset:-1px;border-radius:inherit;background:#807974;pointer-events:none;transform:scaleY(0);transform-origin:bottom;transition:transform .46s cubic-bezier(.22,1,.36,1)}
+          .artboard .hotspot.pill::after{content:attr(data-label);position:absolute;z-index:1;inset:0;display:grid;place-items:center;color:#fff;font-family:inherit;font-size:1.3cqw;font-weight:500;letter-spacing:.015em;line-height:1;text-transform:uppercase;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease;transition-delay:.08s;transform:none}
           .artboard .hotspot.pill:hover::before,.artboard .hotspot.pill:focus-visible::before,.artboard .hotspot.pill:active::before{transform:scaleY(1)}
-          .artboard .hotspot.pill:hover::after,.artboard .hotspot.pill:focus-visible::after,.artboard .hotspot.pill:active::after{color:#fff}
+          .artboard .hotspot.pill:hover::after,.artboard .hotspot.pill:focus-visible::after,.artboard .hotspot.pill:active::after{opacity:1}
           @media(prefers-reduced-motion:reduce){.artboard .hotspot.pill::before,.artboard .hotspot.pill::after{transition:none}}
           """
           html = html.replace("</style>", css + "\n</style>", 1)
