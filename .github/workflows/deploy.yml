@@ -32,12 +32,12 @@ jobs:
           html = path.read_text(encoding="utf-8")
           css = """
           .nav-about,.nav-ill,.nav-pack,.nav-ip,.nav-contact{top:4.68%;height:4.16%}
-          .artboard .hotspot.pill{isolation:isolate;overflow:hidden;background:transparent;border:0;border-radius:999px;color:transparent;transition:background-color .35s ease}
+          .artboard .hotspot.pill{isolation:isolate;overflow:hidden;background:transparent;border:0;border-radius:999px;color:transparent;transition:background-color .35s ease,box-shadow .35s ease}
           .artboard .hotspot.pill:hover{background:#807974}
           .artboard .hotspot.pill:focus-visible{outline:none}
           .artboard .hotspot.pill::before{content:none}
           .artboard .hotspot.pill::after{content:attr(data-label);position:absolute;z-index:1;inset:0;display:grid;place-items:center;color:#fff;font-family:inherit;font-size:1.3cqw;font-weight:500;letter-spacing:.015em;line-height:1;text-transform:uppercase;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .18s ease;transition-delay:.08s;transform:none}
-          .artboard .hotspot.pill:hover,.artboard .hotspot.pill:focus-visible,.artboard .hotspot.pill:active{background:#807974}
+          .artboard .hotspot.pill:hover,.artboard .hotspot.pill:focus-visible,.artboard .hotspot.pill:active{background:#807974;box-shadow:0 0 0 1.5px #807974}
           .artboard .hotspot.pill:hover::after,.artboard .hotspot.pill:focus-visible::after,.artboard .hotspot.pill:active::after{opacity:1}
           @media(prefers-reduced-motion:reduce){.artboard .hotspot.pill{transition:none}.artboard .hotspot.pill::after{transition:none}}
           """
